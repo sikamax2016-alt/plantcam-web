@@ -1,43 +1,279 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية - Plant Cam</title>
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 20px; color: #333; max-width: 800px; margin: auto; }
-        h1 { color: #2e7d32; }
-        h2 { color: #388e3c; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
-        .english { direction: ltr; text-align: left; background: #f9f9f9; padding: 15px; border-radius: 8px; margin-top: 20px; }
-        footer { margin-top: 30px; padding: 20px; border-top: 2px solid #2e7d32; text-align: center; background: #f1f8e9; }
-        .contact-info { font-weight: bold; color: #2e7d32; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شروط الاستخدام — Plant Cam</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #060e0a;
+  --card: #0f1e16;
+  --border: rgba(82,183,136,0.12);
+  --accent: #52B788;
+  --gold: #C9A84C;
+  --gold2: #E8C96D;
+  --text: #E8F5E9;
+  --sub: #80A890;
+  --terra: #B05B3B;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'Cairo',sans-serif; min-height:100vh; overflow-x:hidden; }
+body::before {
+  content:''; position:fixed; inset:0;
+  background-image: radial-gradient(circle at 20% 20%, rgba(82,183,136,0.04) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(201,168,76,0.03) 0%, transparent 50%);
+  pointer-events:none; z-index:0;
+}
+.zellige {
+  position:fixed; inset:0; opacity:0.02;
+  background-image: repeating-conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 30deg, rgba(201,168,76,0.8) 30deg, rgba(201,168,76,0.8) 32deg, transparent 32deg, transparent 60deg);
+  background-size:60px 60px; pointer-events:none; z-index:0;
+}
+.hero { position:relative; z-index:1; text-align:center; padding:80px 24px 60px; border-bottom:1px solid var(--border); }
+.hero-glow { position:absolute; top:0; left:50%; transform:translateX(-50%); width:600px; height:300px; background:radial-gradient(ellipse, rgba(201,168,76,0.06) 0%, transparent 70%); pointer-events:none; }
+.logo-wrap {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:90px; height:90px; border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, #2D6A4F, #091510);
+  border:2px solid rgba(201,168,76,0.4);
+  box-shadow:0 0 40px rgba(82,183,136,0.2), 0 0 80px rgba(201,168,76,0.08);
+  margin-bottom:20px; font-size:42px;
+  animation:float 4s ease-in-out infinite;
+}
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.brand {
+  font-family:'Amiri',serif; font-size:42px; font-weight:700;
+  background:linear-gradient(135deg, var(--gold), var(--gold2), var(--gold));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  letter-spacing:2px; margin-bottom:8px;
+}
+.page-title { font-size:16px; color:var(--gold); letter-spacing:4px; font-weight:300; margin-bottom:6px; }
+.date { font-size:12px; color:var(--sub); opacity:0.6; }
+.ornament { display:flex; align-items:center; justify-content:center; gap:12px; margin:24px auto; }
+.ornament-line { width:60px; height:1px; background:linear-gradient(to left, var(--gold), transparent); }
+.ornament-line.rev { background:linear-gradient(to right, var(--gold), transparent); }
+.ornament-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); }
+.ornament-diamond { width:8px; height:8px; background:var(--gold); transform:rotate(45deg); opacity:0.7; }
+.container { max-width:800px; margin:0 auto; padding:48px 24px 80px; position:relative; z-index:1; }
+.section {
+  background:var(--card); border:1px solid var(--border); border-radius:20px;
+  padding:28px 32px; margin-bottom:20px; position:relative; overflow:hidden;
+  transition:border-color 0.3s, transform 0.3s; animation:fadeUp 0.6s ease both;
+}
+.section::before { content:''; position:absolute; top:0; right:0; width:80px; height:80px; background:radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%); }
+.section:hover { border-color:rgba(82,183,136,0.25); transform:translateY(-2px); }
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.section:nth-child(1){animation-delay:0.1s} .section:nth-child(2){animation-delay:0.15s}
+.section:nth-child(3){animation-delay:0.2s} .section:nth-child(4){animation-delay:0.25s}
+.section:nth-child(5){animation-delay:0.3s} .section:nth-child(6){animation-delay:0.35s}
+.section:nth-child(7){animation-delay:0.4s} .section:nth-child(8){animation-delay:0.45s}
+.section-head { display:flex; align-items:center; gap:14px; margin-bottom:16px; padding-bottom:14px; border-bottom:1px solid var(--border); }
+.section-icon { width:44px; height:44px; border-radius:12px; background:rgba(82,183,136,0.1); border:1px solid rgba(82,183,136,0.2); display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+.section-title { font-size:17px; font-weight:700; color:var(--gold); }
+.section-number { margin-right:auto; font-size:11px; color:var(--sub); opacity:0.4; font-family:monospace; }
+p { color:var(--sub); font-size:14px; line-height:1.9; margin-bottom:10px; }
+p:last-child { margin-bottom:0; }
+ul { padding-right:20px; margin:8px 0; }
+li { color:var(--sub); font-size:14px; line-height:1.9; margin-bottom:6px; }
+li::marker { color:var(--accent); }
+.highlight { background:rgba(82,183,136,0.06); border-right:3px solid var(--accent); border-radius:0 10px 10px 0; padding:14px 18px; margin:14px 0; font-size:13.5px; color:var(--text); line-height:1.8; }
+.highlight.gold { background:rgba(201,168,76,0.06); border-color:var(--gold); }
+.highlight.red { background:rgba(176,91,59,0.08); border-color:var(--terra); color:#E8C9B0; }
+.english-box {
+  background:rgba(0,0,0,0.3); border:1px solid rgba(82,183,136,0.15);
+  border-radius:12px; padding:20px 24px; margin-top:14px;
+  direction:ltr; text-align:left;
+}
+.english-box h4 { color:var(--accent); font-size:14px; margin-bottom:10px; font-weight:700; }
+.english-box p { font-size:13px; }
+.contact {
+  background:linear-gradient(135deg, rgba(45,106,79,0.15), rgba(9,21,16,0.5));
+  border:1px solid rgba(201,168,76,0.2); border-radius:20px;
+  padding:36px; text-align:center; position:relative; overflow:hidden; margin-top:32px;
+}
+.contact::before { content:'⚖️'; position:absolute; top:-10px; left:20px; font-size:80px; opacity:0.04; }
+.dev-name { font-family:'Amiri',serif; font-size:22px; color:var(--gold); margin-bottom:4px; }
+.contact-title { font-size:20px; font-weight:700; color:var(--gold); margin-bottom:6px; }
+.contact-sub { font-size:13px; color:var(--sub); margin-bottom:20px; }
+.contact-links { display:flex; flex-direction:column; gap:10px; align-items:center; }
+.contact-link {
+  display:inline-flex; align-items:center; gap:10px;
+  background:rgba(82,183,136,0.08); border:1px solid rgba(82,183,136,0.2);
+  border-radius:12px; padding:10px 24px; color:var(--accent);
+  text-decoration:none; font-size:14px; font-weight:600;
+  transition:all 0.3s; min-width:260px; justify-content:center;
+}
+.contact-link:hover { background:rgba(82,183,136,0.15); border-color:var(--accent); transform:translateY(-2px); }
+.contact-link.wa { background:rgba(37,211,102,0.08); border-color:rgba(37,211,102,0.2); color:#25D166; }
+.contact-link.wa:hover { background:rgba(37,211,102,0.15); border-color:#25D166; }
+.nav-link { display:inline-flex; align-items:center; gap:8px; color:var(--accent); text-decoration:none; font-size:13px; margin-bottom:32px; opacity:0.7; transition:opacity 0.2s; }
+.nav-link:hover { opacity:1; }
+footer { text-align:center; padding:32px; font-size:11px; color:var(--sub); opacity:0.4; letter-spacing:2px; position:relative; z-index:1; }
+@media(max-width:600px) { .hero{padding:60px 16px 40px} .brand{font-size:32px} .section{padding:20px} .container{padding:32px 16px 60px} .contact{padding:24px 16px} }
+</style>
 </head>
 <body>
-    <h1>سياسة الخصوصية لتطبيق Plant Cam</h1>
-    <p>تاريخ التحديث: 2 مارس 2026</p>
+<div class="zellige"></div>
 
-    <h2>1. جمع المعلومات</h2>
-    <p>تطبيق <strong>Plant Cam</strong> يستخدم الكاميرا للتعرف على النباتات عبر الذكاء الاصطناعي. نحن لا نقوم بتخزين صورك الشخصية على خوادمنا بشكل دائم، الصور تُعالج فقط لتقديم الخدمة.</p>
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="logo-wrap">⚖️</div>
+  <div class="brand">Plant Cam</div>
+  <div class="page-title">شروط الاستخدام</div>
+  <div class="date">آخر تحديث: مارس 2026</div>
+  <div class="ornament">
+    <div class="ornament-line"></div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-dot"></div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-line rev"></div>
+  </div>
+</div>
 
-    <h2>2. الإعلانات (شركات الطرف الثالث)</h2>
-    <p>يستخدم التطبيق خدمات إعلانية (مثل <strong>Axon Ads</strong> أو <strong>AppLovin</strong>) لتقديم إعلانات مخصصة. قد تجمع هذه الشركات معرفات الجهاز (Advertising ID) لتحسين تجربة الإعلانات، ويخضع ذلك لسياسات الخصوصية الخاصة بمزودي هذه الخدمات.</p>
+<div class="container">
 
-    <h2>3. الأذونات</h2>
-    <p>نطلب إذن الكاميرا فقط لتشغيل ميزة التعرف على النباتات وفحص المحاصيل الموضحة في صور التطبيق.</p>
+  <a href="privacy.html" class="nav-link">← سياسة الخصوصية</a>
 
-    <div class="english">
-        <h2>Privacy Policy (English Version)</h2>
-        <p><strong>Plant Cam</strong> app uses AI to identify plants. We respect your privacy and do not collect personal data without consent.</p>
-        <p><strong>Ad Networks:</strong> We use third-party advertising companies to serve ads. These companies may use information about your visits to this and other apps in order to provide advertisements about goods and services of interest to you.</p>
-        <p><strong>Permissions:</strong> Camera access is required only for plant identification functionality.</p>
-        <p><strong>Contact:</strong> For any privacy concerns, contact us at: +201015949315</p>
+  <!-- 01 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-icon">📋</div>
+      <div class="section-title">قبول الشروط</div>
+      <div class="section-number">01</div>
     </div>
+    <p>باستخدامك تطبيق <strong style="color:var(--accent)">Plant Cam</strong>، فإنك توافق على الالتزام بهذه الشروط والأحكام. إذا كنت لا توافق عليها، يرجى عدم استخدام التطبيق.</p>
+    <div class="highlight gold">هذه الشروط سارية المفعول اعتباراً من مارس 2026 وتخضع للتحديث من وقت لآخر.</div>
+  </div>
 
-    <footer>
-        <p class="contact-info">المطور: مصطفى أحمد محمود</p>
-        <p>سوهاج، مصر | موبايل/واتساب: 01015949315 (20+)</p>
-        <p>© 2026 Plant Cam AI Studio - جميع الحقوق والملكيات الفكرية محفوظة.</p>
-    </footer>
+  <!-- 02 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-icon">🌱</div>
+      <div class="section-title">وصف الخدمة</div>
+      <div class="section-number">02</div>
+    </div>
+    <p>Plant Cam هو تطبيق للتعرف على النباتات والأمراض النباتية باستخدام الذكاء الاصطناعي. يوفر التطبيق:</p>
+    <ul>
+      <li>التعرف على أنواع النباتات بالصورة بدعم 3 نماذج AI</li>
+      <li>اكتشاف الأمراض النباتية وتوصيات العلاج</li>
+      <li>نصائح العناية والري المخصصة لمنطقتك</li>
+      <li>تذكيرات ري ذكية للنباتات</li>
+      <li>دعم 16 لغة حول العالم</li>
+    </ul>
+  </div>
+
+  <!-- 03 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-icon">⚠️</div>
+      <div class="section-title">حدود المسؤولية</div>
+      <div class="section-number">03</div>
+    </div>
+    <div class="highlight red">نتائج التطبيق للأغراض التعليمية والإرشادية فقط. لا تعتمد عليها كمصدر وحيد لاتخاذ قرارات زراعية أو طبية.</div>
+    <p>التطبيق يستخدم الذكاء الاصطناعي وقد لا تكون النتائج دقيقة 100% في جميع الحالات. نحن غير مسؤولين عن:</p>
+    <ul>
+      <li>أي خسائر زراعية ناتجة عن الاعتماد على نتائج التطبيق</li>
+      <li>أضرار ناتجة عن استخدام مبيدات أو علاجات مقترحة دون استشارة متخصص</li>
+      <li>تلف المحاصيل أو النباتات</li>
+    </ul>
+  </div>
+
+  <!-- 04 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-icon">✅</div>
+      <div class="section-title">الاستخدام المسموح</div>
+      <div class="section-number">04</div>
+    </div>
+    <ul>
+      <li>استخدام التطبيق للأغراض الشخصية والزراعية المشروعة</li>
+      <li>التعرف على النباتات والأمراض لأغراض تعليمية وزراعية</li>
+      <li>مشاركة نتائج التعرف مع الآخرين</li>
+      <li>تفعيل التذكيرات وإدارة قائمة النباتات</li>
+    </ul>
+  </div>
+
+  <!-- 05 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-icon">🚫</div>
+      <div class="section-title">الاستخدام المحظور</div>
+      <div class="section-number">05</div>
+    </div>
+    <ul>
+      <li>استخدام التطبيق لأغراض غير قانونية</li>
+      <li>محاولة اختراق أو تعطيل خدمات التطبيق</li>
+      <li>إعادة بيع أو توزيع التطبيق دون إذن كتابي</li>
+      <li>انتهاك حقوق الملكية الفكرية للتطبيق</li>
+      <li>إرسال محتوى ضار أو مسيء عبر التطبيق</li>
+    </ul>
+  </div>
+
+  <!-- 06 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-icon">💳</div>
+      <div class="section-title">الاشتراكات والمدفوعات</div>
+      <div class="section-number">06</div>
+    </div>
+    <p>يتوفر التطبيق بنسختين:</p>
+    <ul>
+      <li><strong style="color:var(--accent)">مجاني</strong> — 10 فحوصات يومياً مع إعلانات</li>
+      <li><strong style="color:var(--gold)">Pro</strong> — فحوصات غير محدودة بدون إعلانات</li>
+    </ul>
+    <div class="highlight">
+      • التجديد تلقائي ما لم يتم الإلغاء قبل 24 ساعة من انتهاء الفترة<br>
+      • يمكن إدارة الاشتراك وإلغاؤه من إعدادات المتجر<br>
+      • لا يتم رد المبالغ للفترة الحالية بعد الشراء
+    </div>
+    <div class="highlight gold">جميع المدفوعات تتم عبر Google Play أو Huawei AppGallery وتخضع لشروطهم.</div>
+  </div>
+
+  <!-- 07 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-icon">📢</div>
+      <div class="section-title">الإعلانات</div>
+      <div class="section-number">07</div>
+    </div>
+    <p>يستخدم التطبيق شبكة إعلانات <strong style="color:var(--text)">Unity Ads</strong> لعرض إعلانات للمستخدمين المجانيين. يمكنك مشاهدة إعلان مكافأة للحصول على فحوصات إضافية مجانية.</p>
+    <p>للتخلص من الإعلانات نهائياً، يمكنك الترقية لنسخة <strong style="color:var(--gold)">Pro</strong>.</p>
+  </div>
+
+  <!-- 08 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-icon">🔄</div>
+      <div class="section-title">التعديلات على الشروط</div>
+      <div class="section-number">08</div>
+    </div>
+    <p>نحتفظ بالحق في تعديل هذه الشروط في أي وقت. سيتم إخطارك بالتغييرات الجوهرية داخل التطبيق. الاستمرار في الاستخدام بعد التحديث يعني القبول بالشروط الجديدة.</p>
+
+    <!-- English version -->
+    <div class="english-box">
+      <h4>Terms of Use — English Version</h4>
+      <p>By using Plant Cam, you agree to these terms. The app uses AI for plant identification purposes only. Results are for educational use and should not replace professional agricultural advice. Subscriptions auto-renew unless cancelled 24 hours before renewal date. All payments processed through app stores.</p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact">
+    <div class="dev-name">مصطفى أحمد محمود</div>
+    <div class="contact-title">تواصل مع المطور</div>
+    <div class="contact-sub">سوهاج، مصر — لأي استفسار حول هذه الشروط</div>
+    <div class="contact-links">
+      <a href="mailto:plantcam2026@gmail.com" class="contact-link">
+        <span>📧</span><span>plantcam2026@gmail.com</span>
+      </a>
+      <a href="https://wa.me/201015949315" class="contact-link wa">
+        <span>💬</span><span>واتساب: 01015949315</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>Plant Cam © 2026 — جميع الحقوق محفوظة</footer>
 </body>
 </html>
